@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Layout } from 'antd';
+import { Provider } from 'react-redux';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+import Map from './components/Map';
+import FormInput from './components/FormInput';
+import RegionInfo from './components/RegionInfo';
+import store from './redux/store';
 import './App.css';
 
-function App() {
+const { Content } = Layout;
+
+const App = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="app">
+        <Layout style={{ minHeight: '100vh' }}>
+          <Header />
+          <Layout>
+            {!collapsed && <Sidebar collapsed={collapsed} toggleSidebar={toggleSidebar} />}
+            <Layout>
+              <Content>
+                <div className="main-content">
+                  <Map />
+                  <div className="content-wrapper">
+                    <FormInput />
+                    <RegionInfo />
+                  </div>
+                </div>
+              </Content>
+              <Footer />
+            </Layout>
+          </Layout>
+        </Layout>
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;

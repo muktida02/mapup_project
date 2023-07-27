@@ -1,38 +1,206 @@
-.App {
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+/* Layout Styles */
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+  padding: 16px;
+  background-color: #2c3e50; 
+  color: lightgoldenrodyellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header button {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+.header button.ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  color: #fff;
+}
+
+.header button.ant-btn-primary:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.header button.ant-btn-default {
+  background-color: #fff;
+  border-color: #d9d9d9;
+  color: #333;
+}
+
+.header button.ant-btn-default:hover {
+  background-color: #f5f5f5;
+  border-color: #d9d9d9;
+  color: #333;
+}
+
+.header button.ant-btn-ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: #fff;
+}
+
+.header button.ant-btn-ghost:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #1890ff;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: #34495e; /* Dark Gray */
+  border-right: 1px solid #e8e8e8;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 50px;
+}
+
+.sidebar .ant-menu {
+  border-right: 0;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  background-color: azure; /* Light Gray */
+}
+
+/* Footer Styles */
+.footer {
+  padding: 16px;
+  background-color: #2c3e50; /* Dark Blue */
+  color: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Night Mode Styles */
+.night-mode-toggle {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 8px;
+  background-color: #2c3e50; /* Dark Blue */
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+/* Map styles */
+.map-container {
+  height: 500px;
+  width: 100%;
+  background-color: antiquewhite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Form Input Styles */
+.form-input {
+  margin-bottom: 16px;
+}
+
+.form-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-input select {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-submit-button {
+  width: 100%;
+  height: 40px;
+  background-color: #2c3e50;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-submit-button:hover {
+  background-color: #1d2939;
+}
+
+/* Region Info Styles */
+.region-info {
+  padding: 16px;
+  background-color: aliceblue;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.region-info-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  background-color: #3498db; /* Blue color */
+
+}
+
+.region-info-text {
+  font-size: 16px;
+  color: #555; /* Dark gray color */
+}
+
+.region-info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.region-info-item-label {
+  font-weight: bold;
+  color: #2c3e50; /* Dark blue color */
+
+}
+
+.region-info-item-value {
+  color: #27ae60; /* Green color */
+
+}
+
+.region-info h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: darkcyan;
+}
+
+.region-info p {
+  margin-bottom: 8px;
+  color: darkolivegreen;
+
 }
